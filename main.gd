@@ -48,6 +48,14 @@ func _on_mob_timer_timeout():
 	add_child(mob)
 
 #
+func _process(delta: float) -> void:
+	if Input.is_action_just_pressed("escape"):
+		get_tree().quit(0)
+	if Input.is_action_just_pressed("restart"):
+		game_over()
+		new_game()
+
+#
 func _on_score_timer_timeout():
 	score += 1
 

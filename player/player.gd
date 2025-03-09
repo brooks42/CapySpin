@@ -5,6 +5,8 @@ signal hit
 @export var speed = 400 # How fast the player will move (pixels/sec).
 var screen_size # Size of the game window.
 
+@onready var gun = get_node(^"Gun") as Gun
+
 var rotation_velocity = 0
 const rotation_velocity_cap = 6
 
@@ -59,10 +61,15 @@ func _process(delta):
 	# now set the player's direction facing
 	$AnimatedSprite2D.flip_v = false
 	$AnimatedSprite2D.flip_h = rotation_velocity < 0
+	
+	if Input.is_action_just_pressed("shoot"):
+		gun.shoot($AnimatedSprite2D.flip_h, rotation)
 
 #
 func _on_body_entered(body: Node2D):
-	hide() # Player disappears after being hit.
-	hit.emit()
-	# Must be deferred as we can't change physics properties on a physics callback.
-	$CollisionShape2D.set_deferred("disabled", true)
+	if body is Mob:
+		hide() # Player disappears after being hit.
+		hit.emit()
+
+		# Must be deferred as we can't change physics properties on a physics callback.
+		$CollisionShape2D.set_deferred("disabled", true)

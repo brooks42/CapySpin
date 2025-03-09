@@ -1,7 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://bicdf3xspao67"]
+[gd_scene load_steps=7 format=3 uid="uid://bicdf3xspao67"]
 
-[ext_resource type="Texture2D" uid="uid://dng55exnepeir" path="res://capy_flat.png" id="1_4flbx"]
-[ext_resource type="Script" uid="uid://deb6n7v8j3ilr" path="res://player.gd" id="1_onrkg"]
+[ext_resource type="Texture2D" uid="uid://dng55exnepeir" path="res://player/capy_flat.png" id="1_4flbx"]
+[ext_resource type="Script" uid="uid://deb6n7v8j3ilr" path="res://player/player.gd" id="1_onrkg"]
+[ext_resource type="Script" uid="uid://drsvw5cplosxx" path="res://player/gun.gd" id="3_i3pqv"]
+[ext_resource type="AudioStream" uid="uid://du5xoojewwvua" path="res://player/AppleToss.mp3" id="4_yw30f"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_onrkg"]
 animations = [{
@@ -29,5 +31,11 @@ animation = &"walk"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_4flbx")
+
+[node name="Gun" type="Marker2D" parent="."]
+script = ExtResource("3_i3pqv")
+
+[node name="AppleTossSound" type="AudioStreamPlayer" parent="Gun"]
+stream = ExtResource("4_yw30f")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

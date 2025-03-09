@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dng55exnepeir"
-path="res://.godot/imported/capy_flat.png-72b8a504168ea14acc263eca2b0b0baa.ctex"
+path="res://.godot/imported/capy_flat.png-cb5cc7097e38e083ceead27cc4f48bf6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://capy_flat.png"
-dest_files=["res://.godot/imported/capy_flat.png-72b8a504168ea14acc263eca2b0b0baa.ctex"]
+source_file="res://player/capy_flat.png"
+dest_files=["res://.godot/imported/capy_flat.png-cb5cc7097e38e083ceead27cc4f48bf6.ctex"]
 
 [params]
 

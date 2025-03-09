@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=4 uid="uid://b2gusmyexqmx"]
 
 [ext_resource type="Script" uid="uid://bqy2gjnx6en4g" path="res://main.gd" id="1_0xm2m"]
-[ext_resource type="PackedScene" uid="uid://bicdf3xspao67" path="res://player.tscn" id="1_ig7tw"]
+[ext_resource type="PackedScene" uid="uid://bicdf3xspao67" path="res://player/player.tscn" id="1_ig7tw"]
 [ext_resource type="PackedScene" uid="uid://bf57ij66ce1jc" path="res://mob.tscn" id="2_h2yge"]
 [ext_resource type="AudioStream" uid="uid://dkft8xfsna4yu" path="res://roblox_oof.mp3" id="4_1bvp3"]
 
