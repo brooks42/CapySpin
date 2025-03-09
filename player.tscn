@@ -1,0 +1,33 @@
+[gd_scene load_steps=5 format=3 uid="uid://bicdf3xspao67"]
+
+[ext_resource type="Texture2D" uid="uid://dng55exnepeir" path="res://capy_flat.png" id="1_4flbx"]
+[ext_resource type="Script" uid="uid://deb6n7v8j3ilr" path="res://player.gd" id="1_onrkg"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_onrkg"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_4flbx")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_4flbx"]
+radius = 32.0
+height = 78.0
+
+[node name="Player" type="Area2D"]
+script = ExtResource("1_onrkg")
+metadata/_edit_group_ = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.1, 0.1)
+sprite_frames = SubResource("SpriteFrames_onrkg")
+animation = &"walk"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_4flbx")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
