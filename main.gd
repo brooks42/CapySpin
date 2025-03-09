@@ -10,11 +10,16 @@ func new_game():
 	score = 0
 	$Player.start($StartPosition.position)
 	$StartTimer.start()
+	
+	$Music.play()
 
 #
 func game_over():
 	$ScoreTimer.stop()
 	$MobTimer.stop()
+	
+	$Music.stop()
+	$DeathSound.play()
 	
 #	
 func _on_mob_timer_timeout():
