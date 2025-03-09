@@ -1,13 +1,14 @@
-[gd_scene load_steps=7 format=4 uid="uid://b2gusmyexqmx"]
+[gd_scene load_steps=8 format=4 uid="uid://b2gusmyexqmx"]
 
 [ext_resource type="Script" uid="uid://bqy2gjnx6en4g" path="res://main.gd" id="1_0xm2m"]
 [ext_resource type="PackedScene" uid="uid://bicdf3xspao67" path="res://player/player.tscn" id="1_ig7tw"]
 [ext_resource type="PackedScene" uid="uid://bf57ij66ce1jc" path="res://mob.tscn" id="2_h2yge"]
+[ext_resource type="PackedScene" uid="uid://ck0jmfj5wunj7" path="res://sky.tscn" id="3_lquwl"]
 [ext_resource type="AudioStream" uid="uid://dkft8xfsna4yu" path="res://roblox_oof.mp3" id="4_1bvp3"]
 
 [sub_resource type="Curve2D" id="Curve2D_ig7tw"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, -48, -37, 0, 0, 0, 0, 1073, -37, 0, 0, 0, 0, 1080, 798, 0, 0, 0, 0, -38, 788, 0, 0, 0, 0, -48, -37)
+"points": PackedVector2Array(0, 0, 0, 0, -48, -37, 0, 0, 0, 0, 1980, -20, 0, 0, 0, 0, 1959, 1141, 0, 0, 0, 0, -39, 1115, 0, 0, 0, 0, -48, -37)
 }
 point_count = 5
 
@@ -18,6 +19,8 @@ loop = true
 [node name="Main" type="Node"]
 script = ExtResource("1_0xm2m")
 mob_scene = ExtResource("2_h2yge")
+
+[node name="Sky" parent="." instance=ExtResource("3_lquwl")]
 
 [node name="Player" parent="." instance=ExtResource("1_ig7tw")]
 
@@ -31,13 +34,14 @@ wait_time = 2.0
 one_shot = true
 
 [node name="StartPosition" type="Marker2D" parent="."]
-position = Vector2(512, 384)
+position = Vector2(919, 656)
 
 [node name="MobPath" type="Path2D" parent="."]
 curve = SubResource("Curve2D_ig7tw")
 
 [node name="MobSpawnLocation" type="PathFollow2D" parent="MobPath"]
 position = Vector2(-48, -37)
+rotation = 0.00838245
 
 [node name="Music" type="AudioStreamPlayer" parent="."]
 stream = SubResource("AudioStreamMP3_h2yge")
